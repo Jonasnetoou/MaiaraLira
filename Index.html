@@ -1,0 +1,479 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maiara do jeitinho dela 😄</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }:root {
+  --rosa: #ff4fa1;
+  --roxo: #8b5cf6;
+  --azul: #38bdf8;
+  --amarelo: #fbbf24;
+  --verde: #34d399;
+  --texto: #6b214c;
+  --card: rgba(255,255,255,0.86);
+  --shadow: 0 18px 40px rgba(139, 92, 246, 0.16);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--texto);
+  background:
+    radial-gradient(circle at top left, #ffe7f4 0%, transparent 28%),
+    radial-gradient(circle at top right, #e7f6ff 0%, transparent 26%),
+    linear-gradient(180deg, #fff0f8 0%, #f8f4ff 45%, #fffdf8 100%);
+  position: relative;
+}
+
+.bg, .bg::before, .bg::after {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background-image:
+    radial-gradient(circle at 10% 14%, rgba(255,79,161,0.14) 0 24px, transparent 25px),
+    radial-gradient(circle at 20% 18%, rgba(251,191,36,0.16) 0 12px, transparent 13px),
+    radial-gradient(circle at 88% 16%, rgba(56,189,248,0.14) 0 24px, transparent 25px),
+    radial-gradient(circle at 84% 78%, rgba(52,211,153,0.14) 0 20px, transparent 21px),
+    radial-gradient(circle at 12% 84%, rgba(139,92,246,0.14) 0 18px, transparent 19px);
+  z-index: 0;
+  opacity: 0.95;
+}
+
+.floaters {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floater {
+  position: absolute;
+  top: -10vh;
+  font-size: 24px;
+  opacity: 0.82;
+  animation: fall linear infinite;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10vh) rotate(0deg); }
+  100% { transform: translateY(110vh) rotate(360deg); }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, 92%);
+  margin: 0 auto;
+  padding: 34px 0 80px;
+}
+
+.hero, .box, .gallery-wrap, .surprise {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.72);
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  text-align: center;
+  padding: 36px 22px;
+  margin-bottom: 28px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  top: -150px;
+  right: -90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.6), transparent 70%);
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--rosa), var(--roxo), var(--azul));
+  color: white;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 22px rgba(139,92,246,0.22);
+}
+
+h1 {
+  font-size: clamp(2.2rem, 8vw, 4.8rem);
+  line-height: 1.04;
+  margin-bottom: 14px;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, var(--rosa), var(--amarelo), var(--roxo), var(--azul));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulseTitle 2.8s ease-in-out infinite;
+}
+
+@keyframes pulseTitle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.018); }
+}
+
+.typing {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  min-height: 2.2em;
+  font-weight: 700;
+  color: #8d3263;
+  margin: 0 auto 14px;
+  max-width: 860px;
+}
+
+.subtext {
+  max-width: 860px;
+  margin: 0 auto;
+  font-size: 1.06rem;
+  color: #7f4a67;
+  line-height: 1.75;
+}
+
+.featured {
+  display: grid;
+  grid-template-columns: 1.06fr 0.94fr;
+  gap: 20px;
+  margin: 28px 0;
+  align-items: stretch;
+}
+
+.box { padding: 14px; overflow: hidden; }
+
+.featured-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  object-fit: cover;
+  border-radius: 22px;
+  display: block;
+}
+
+.featured-text {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(247,243,255,0.86));
+}
+
+.featured-text h2,
+.gallery-wrap h2,
+.surprise h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: #7d2357;
+}
+
+.featured-text p,
+.message p,
+.surprise p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #76415d;
+}
+
+.message {
+  padding: 26px;
+  margin: 24px 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(250,245,255,0.88));
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.75);
+}
+
+.message strong {
+  color: #a12669;
+}
+
+.gallery-wrap {
+  padding: 24px 18px 18px;
+  margin-top: 26px;
+}
+
+.gallery-title {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 18px;
+  color: #8a5570;
+  line-height: 1.7;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 24px;
+  padding: 10px;
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255,79,161,0.28), rgba(139,92,246,0.24), rgba(56,189,248,0.24));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-7px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.18);
+}
+
+.photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  background: linear-gradient(135deg, #ffe3f2, #eef7ff);
+}
+
+.card span {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 700;
+  color: #9c4b74;
+  padding: 0 6px 4px;
+}
+
+.surprise {
+  margin-top: 28px;
+  padding: 28px 22px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(239,248,255,0.9));
+}
+
+.surprise button {
+  margin-top: 18px;
+  border: 0;
+  background: linear-gradient(90deg, var(--rosa), var(--roxo));
+  color: white;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(139,92,246,0.24);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.surprise button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 18px 30px rgba(139,92,246,0.3);
+}
+
+.secret {
+  max-width: 760px;
+  margin: 18px auto 0;
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.78);
+  color: #874b67;
+  line-height: 1.8;
+  display: none;
+}
+
+.secret.show {
+  display: block;
+  animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.footer {
+  text-align: center;
+  margin-top: 28px;
+  color: #9a5f7d;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .featured { grid-template-columns: 1fr; }
+  .featured-photo img { min-height: 360px; }
+}
+
+@media (max-width: 640px) {
+  .container { padding-top: 20px; }
+  .hero, .box, .gallery-wrap, .surprise, .message { border-radius: 24px; }
+  .featured-text { padding: 22px 18px; }
+  .gallery { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+}
+
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="floaters" id="floaters"></div>  <main class="container">
+    <section class="hero">
+      <div class="badge">😂 Um site no nível da resenha da Maiara 😂</div>
+      <h1>Maiara do jeitinho dela</h1>
+      <p class="typing" id="typing"></p>
+      <p class="subtext">
+        Essa página é para uma pessoa que não passa despercebida: divertida, comunicativa, cheia de presença e com energia de quem transforma qualquer conversa simples em entretenimento puro.
+      </p>
+    </section><section class="featured">
+  <div class="box featured-photo">
+    <img src="foto.png" alt="Montagem divertida da Maiara" />
+  </div>
+  <div class="box featured-text">
+    <h2>A diva da conversa fiada boa</h2>
+    <p>
+      Maiara tem esse talento raro de chegar e já melhorar o ambiente. Onde ela entra, a resenha sobe de nível, a risada aparece e o silêncio perde feio.
+    </p>
+    <p>
+      Esse site é uma homenagem divertida para combinar com o jeitão dela: espontânea, engraçada e impossível de ser esquecida.
+    </p>
+  </div>
+</section>
+
+<section class="message">
+  <p>
+    <strong>Maiara,</strong> você é daquelas pessoas que conseguem ser carismáticas sem esforço. Tem presença, tem humor, tem personalidade e ainda faz tudo parecer natural.
+  </p>
+  <p>
+    Seu jeitinho engraçado, comunicativo e sem enrolação faz qualquer momento ficar mais leve. Você tem energia de protagonista da própria série, com direito a frases boas, caretas aleatórias e comentários que ninguém esquece.
+  </p>
+  <p>
+    Resumindo: você é divertida demais, rende assunto, rende meme e rende boas histórias. <strong>E isso aqui é só uma pequena prova de que ser a resenha em forma de gente já virou sua marca registrada.</strong>
+  </p>
+</section>
+
+<section class="gallery-wrap">
+  <h2>Versões da Maiara 😎</h2>
+  <p class="gallery-title">
+    Um compilado oficial da mulher que entrega carisma, pose, deboche leve e muita personalidade em qualquer ângulo.
+  </p>
+
+  <div class="gallery">
+    <div class="card">
+      <img class="photo" src="foto1.png" alt="Maiara perto da piscina" />
+      <span>Modo plena com vista bonita 😌</span>
+    </div>
+    <div class="card">
+      <img class="photo" src="foto2.png" alt="Maiara sorrindo de verde" />
+      <span>Rosto de tranquila, mente de resenha 😂</span>
+    </div>
+    <div class="card">
+      <img class="photo" src="foto3.png" alt="Maiara segurando uma bebida" />
+      <span>Bebidinha na mão e opinião formada 🍹</span>
+    </div>
+    <div class="card">
+      <img class="photo" src="foto4.png" alt="Maiara no espelho" />
+      <span>Espelho confirmou: presença marcante ✨</span>
+    </div>
+    <div class="card">
+      <img class="photo" src="foto5.jpg" alt="Maiara em close com luz" />
+      <span>Close certo e carisma sobrando 😏</span>
+    </div>
+    <div class="card">
+      <img class="photo" src="foto6.jpg" alt="Maiara sorrindo de preto" />
+      <span>Bonita, engraçada e muito comunicativa 💥</span>
+    </div>
+    <div class="card">
+      <img class="photo" src="foto.png" alt="Montagem da Maiara" />
+      <span>Quatro versões, uma resenha só 🤌</span>
+    </div>
+  </div>
+</section>
+
+<section class="surprise">
+  <h2>Mensagem secreta da resenha 🎉</h2>
+  <p>Clica no botão para liberar um texto digno da Maiara.</p>
+  <button onclick="mostrarMensagem()">Abrir mensagem</button>
+  <div class="secret" id="secretMessage">
+    Maiara, que nunca te faltem motivos para rir alto, responder na lata, fazer os outros rirem junto e continuar sendo exatamente essa pessoa divertida, espontânea e cheia de personalidade. Você é entretenimento de qualidade premium. 😂✨
+  </div>
+</section>
+
+<p class="footer">Feito com humor e carinho para Maiara 😄</p>
+
+  </main>  <script>
+    const phrases = [
+      'Maiara: bonita, engraçada e sem tempo para tédio. 😂',
+      'Ela conversa, brinca e ainda domina a cena toda. ✨',
+      'Carisma alto, vergonha baixa e resenha garantida. 😎',
+      'Uma pessoa comunicativa nível profissional. 🎤',
+      'Se chegou a Maiara, chegou assunto bom. 💥'
+    ];
+
+    const typingEl = document.getElementById('typing');
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeLoop() {
+      const current = phrases[phraseIndex];
+      typingEl.textContent = current.slice(0, charIndex);
+
+      if (!deleting) {
+        charIndex++;
+        if (charIndex > current.length) {
+          deleting = true;
+          setTimeout(typeLoop, 1400);
+          return;
+        }
+      } else {
+        charIndex--;
+        if (charIndex < 0) {
+          deleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          charIndex = 0;
+        }
+      }
+
+      setTimeout(typeLoop, deleting ? 30 : 65);
+    }
+
+    typeLoop();
+
+    function mostrarMensagem() {
+      document.getElementById('secretMessage').classList.toggle('show');
+    }
+
+    const floaters = document.getElementById('floaters');
+    const symbols = ['😂', '✨', '😎', '🎉', '💥', '🤌'];
+
+    for (let i = 0; i < 26; i++) {
+      const floater = document.createElement('span');
+      floater.className = 'floater';
+      floater.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      floater.style.left = Math.random() * 100 + 'vw';
+      floater.style.animationDuration = (8 + Math.random() * 10) + 's';
+      floater.style.animationDelay = (Math.random() * 8) + 's';
+      floater.style.fontSize = (18 + Math.random() * 16) + 'px';
+      floaters.appendChild(floater);
+    }
+  </script></body>
+                                                      </html>
